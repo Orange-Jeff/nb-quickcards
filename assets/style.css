@@ -1,0 +1,357 @@
+/**
+ * NB QuickCards Styles
+ * Version: 1.0.0
+ */
+
+/* ==========================================================================
+   Base Card Styles
+   ========================================================================== */
+
+.nb-quickcard {
+    position: relative;
+    background: #ffffff;
+    margin: 1.5em 0;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.nb-quickcard:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+.nb-quickcard-link {
+    display: flex;
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+.nb-quickcard-link:hover {
+    text-decoration: none !important;
+}
+
+/* ==========================================================================
+   Link Card Image
+   ========================================================================== */
+
+.nb-quickcard-image {
+    flex: 0 0 200px;
+    max-width: 200px;
+    overflow: hidden;
+    background: #f5f5f5;
+}
+
+.nb-quickcard-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 600px) {
+    .nb-quickcard-link {
+        flex-direction: column;
+    }
+
+    .nb-quickcard-image {
+        flex: none;
+        max-width: 100%;
+        height: 160px;
+    }
+}
+
+/* ==========================================================================
+   Content Area
+   ========================================================================== */
+
+.nb-quickcard-content {
+    flex: 1;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+}
+
+.nb-quickcard-title {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 6px;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.nb-quickcard-description {
+    font-size: 0.9em;
+    color: #666666;
+    line-height: 1.5;
+    margin-bottom: 8px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.nb-quickcard-domain {
+    font-size: 0.8em;
+    color: #999999;
+    text-transform: lowercase;
+}
+
+/* ==========================================================================
+   Quote Card Styles
+   ========================================================================== */
+
+.nb-quickcard-quote .nb-quickcard-content {
+    padding: 20px 24px;
+}
+
+.nb-quickcard-quote-icon {
+    font-size: 3em;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.1);
+    font-family: Georgia, serif;
+    margin-bottom: -10px;
+}
+
+.nb-quickcard-quote-text {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #333333;
+    font-style: italic;
+}
+
+.nb-quickcard-quote-text p {
+    margin: 0 0 0.5em 0;
+}
+
+.nb-quickcard-quote-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* Attribution */
+.nb-quickcard-attribution {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.nb-quickcard-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 14px;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.nb-quickcard-meta {
+    min-width: 0;
+}
+
+.nb-quickcard-author {
+    font-weight: 600;
+    font-size: 0.9em;
+    color: #333333;
+}
+
+.nb-quickcard-source {
+    font-size: 0.85em;
+    color: #666666;
+}
+
+a.nb-quickcard-source {
+    text-decoration: none;
+    color: #667eea;
+}
+
+a.nb-quickcard-source:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   Post-it Note Style
+   ========================================================================== */
+
+.nb-quickcard-style-postit {
+    box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.15);
+    border: none !important;
+}
+
+.nb-quickcard-style-postit:hover {
+    transform: rotate(-1deg) translateY(-2px);
+    box-shadow: 4px 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.nb-quickcard-style-postit .nb-quickcard-quote-icon {
+    color: rgba(0, 0, 0, 0.15);
+}
+
+.nb-quickcard-style-postit .nb-quickcard-attribution {
+    border-top-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Folded corner effect */
+.nb-postit-fold {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 30px 30px 0;
+    border-color: transparent;
+    border-right-color: #ffffff;
+}
+
+.nb-postit-fold::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -30px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 30px 0 0 30px;
+    border-color: transparent;
+    border-left-color: inherit;
+}
+
+/* ==========================================================================
+   Minimal Style
+   ========================================================================== */
+
+.nb-quickcard-style-minimal {
+    box-shadow: none !important;
+}
+
+.nb-quickcard-style-minimal:hover {
+    box-shadow: none !important;
+    transform: none;
+}
+
+/* ==========================================================================
+   Shadow Control
+   ========================================================================== */
+
+.nb-quickcard-shadow {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.nb-quickcard-shadow:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* ==========================================================================
+   Link List Styles
+   ========================================================================== */
+
+.nb-quickcard-list {
+    background: #ffffff;
+    overflow: hidden;
+}
+
+.nb-quickcard-list-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    text-decoration: none !important;
+    color: inherit !important;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.15s ease;
+}
+
+.nb-quickcard-list-item:last-child {
+    border-bottom: none;
+}
+
+.nb-quickcard-list-item:hover {
+    background-color: #f8f9fa;
+}
+
+.nb-quickcard-favicon {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.nb-quickcard-favicon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.nb-quickcard-favicon-placeholder {
+    font-size: 16px;
+}
+
+.nb-quickcard-list-content {
+    min-width: 0;
+    flex: 1;
+}
+
+.nb-quickcard-list-title {
+    font-weight: 500;
+    color: #1a1a1a;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.95em;
+}
+
+.nb-quickcard-list-domain {
+    font-size: 0.8em;
+    color: #999999;
+}
+
+/* ==========================================================================
+   Dark Mode Support (if theme provides)
+   ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+    .nb-quickcard {
+        background: #2d2d2d;
+    }
+
+    .nb-quickcard-title {
+        color: #f0f0f0;
+    }
+
+    .nb-quickcard-description {
+        color: #aaaaaa;
+    }
+
+    .nb-quickcard-quote-text {
+        color: #e0e0e0;
+    }
+
+    .nb-quickcard-author {
+        color: #f0f0f0;
+    }
+
+    .nb-quickcard-list {
+        background: #2d2d2d;
+    }
+
+    .nb-quickcard-list-item:hover {
+        background-color: #3d3d3d;
+    }
+
+    .nb-quickcard-list-title {
+        color: #f0f0f0;
+    }
+}
